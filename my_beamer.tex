@@ -1,0 +1,93 @@
+% 文档类型
+\documentclass[16pt]{beamer}
+
+% beamer主题
+\usetheme{Madrid}
+% \usecolortheme{beaver}
+
+% 中英文环境
+\usepackage{ctex}  %一个支持中文宏包，如果不用中文无法显示
+
+% 插图
+\usepackage{graphicx} %这个包提供\includegraphics命令来插入图片
+\usepackage{subfigure} % 提供多列插图
+% 数学环境
+\usepackage{siunitx}
+\usepackage{mathtools} % 引入数学:=定义符号
+\usepackage{physics} % 使用微分符号\dd
+% 圆圈中带数字
+\usepackage{tikz}
+\newcommand*{\circled}[1]{\lower.7ex\hbox{\tikz\draw (0pt, 0pt)%
+        circle (.5em) node {\makebox[1em][c]{\small #1}};}}
+
+% 引用
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue, % white导致中文beamer看不出目录
+    filecolor=blue,      
+    urlcolor=blue,
+    citecolor=cyan,
+    pdfauthor=ShiqianTan
+}
+
+%-----行距设置-----
+%1.2代表的是1.5倍行距;设置为2倍行距应打入1.667
+\linespread{1.0}
+
+% 设置日期格式
+\renewcommand{\today}{\number\year 年\number\month 月\number\day 日}
+
+% 首页
+\title[第二次习题课]{量子化学与原理}
+\subtitle{第二次习题课}
+\author[Shiqian Tan]{谭诗乾}
+\institute[Fudan University]{复旦大学化学系}
+\date{\today} %时间（默认也会显示）
+% 使用logo
+% \logo{\includegraphics[height=0.50cm]{./pictures/FudanLogo.jpg}}
+
+% 正文
+\begin{document}
+    
+    % 首页
+    \frame{\titlepage}
+    
+    % 总目录页
+    \begin{frame}
+        \frametitle{目录}
+        \tableofcontents[hideallsubsections]
+    \end{frame}
+    
+    % 每个section自动添加目录页
+    \AtBeginSection[]{
+        \frame{\frametitle{目录}\tableofcontents[
+            sectionstyle=show/shaded,
+            subsectionstyle=show/show/shaded]}
+    }
+    
+    % section自动目录，不在handout中生成
+    % \AtBeginSection[]{
+    % \begin{frame}<beamer>
+    %     \frametitle{目录}\tableofcontents[
+    %     sectionstyle=show/shaded,
+    %     subsectionstyle=show/show/shaded]
+    % \end{frame}
+    % }
+    
+    \section{目录1}
+    \subsection{子目录1}
+    
+    \section{目录2}
+    \subsection{子目录2}
+    
+    
+    \begin{frame}
+        \frametitle{}
+        \Huge
+        \begin{center}
+            感谢聆听！
+        \end{center}
+    \end{frame}
+    
+\end{document}
